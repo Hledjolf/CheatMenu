@@ -1,0 +1,39 @@
+# Allow-list: the public repo holds only what builds and installs the mod (MOD-FOLDER-STANDARD.md, ".gitignore
+# baseline"; CommandDeck's is the model). Design, comms, tools, tests, fixtures, playtest files, the store kit and
+# the per-game planning folders stay private (local only).
+/*
+!/.gitignore
+!/.gitattributes
+!/LICENSE
+!/README.md
+!/CHANGELOG.md
+!/build.gradle.kts
+!/settings.gradle.kts
+!/gradle.properties
+!/gradlew
+!/gradlew.bat
+!/gradle/
+!/core/
+/core/*
+!/core/src/
+!/core/build.gradle.kts
+/core/src/*
+!/core/src/main/
+!/adapters/
+/adapters/*
+!/adapters/hytale/
+/adapters/hytale/*
+!/adapters/hytale/src/
+!/adapters/hytale/build.gradle.kts
+/adapters/hytale/src/*
+!/adapters/hytale/src/main/
+
+# Ecosystem baseline, inside the allowed folders
+build/
+.gradle/
+*.log
+.idea/
+.vs/
+*.user
+Thumbs.db
+desktop.ini

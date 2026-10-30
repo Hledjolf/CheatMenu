@@ -1,0 +1,14 @@
+{
+  "Group": "Hledjolf",
+  "Name": "CheatMenu",
+  "Version": "${version}",
+  "Description": "Ready-made cheat buttons: items, teleports, time and weather, healing and game mode. Built on CommandDeck; every button shows the command it runs.",
+  "Authors": [
+    { "Name": "Hledjolf" }
+  ],
+  "Main": "cheatmenu.hytale.CheatMenuPlugin",
+  "ServerVersion": "*",
+  "Dependencies": {
+    "Hledjolf:CommandDeck": "${commandDeckRange}"
+  }
+}

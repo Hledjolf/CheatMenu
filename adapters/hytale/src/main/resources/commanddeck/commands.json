@@ -1,0 +1,768 @@
+{
+  "format": "commanddeck.commands",
+  "format_version": "1.1",
+  "mod": {
+    "id": "Hledjolf:CheatMenu",
+    "name": "Cheat Menu"
+  },
+  "commands": [
+    {
+      "name": "cheatmenu check",
+      "label": "Cheat Menu permission check",
+      "description": "Passes if you may use Cheat Menu's presets: operators, holders of cheatmenu.use, and the owner of a singleplayer world. Every Cheat Menu preset runs it first and stops if it's refused.",
+      "category": "Cheat Menu",
+      "permission": "cheatmenu.use",
+      "hidden": true
+    }
+  ],
+  "presets": [
+    {
+      "id": "cheat-turn-on-cheats",
+      "name": "Turn cheats on or off",
+      "category": "Cheat Menu: Start here",
+      "permission": "cheatmenu.use",
+      "description": "In singleplayer, press this once per world before the other presets: it makes you an operator of your own world, which the game needs before it runs cheat commands. Pressing it again takes operator status away; the game says which. On a server, operators: don't press this.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/op self"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-kit-iron",
+      "name": "Iron loadout",
+      "category": "Cheat Menu: Items",
+      "permission": "cheatmenu.use",
+      "description": "Iron armor, equipped, plus a full set of iron weapons and tools. The game's iron kit also adds some cobblestone, potions and food.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/kit iron"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-kit-adamantite",
+      "name": "Adamantite loadout",
+      "category": "Cheat Menu: Items",
+      "permission": "cheatmenu.use",
+      "description": "Adamantite armor, equipped, plus a full set of adamantite weapons and tools.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/kit adamantite"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-workbench-materials",
+      "name": "Workbench upgrade materials",
+      "category": "Cheat Menu: Items",
+      "permission": "cheatmenu.use",
+      "description": "Everything needed to upgrade every workbench, in three batches.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/kit workbench1"
+          },
+          {
+            "type": "command",
+            "line": "/kit workbench2"
+          },
+          {
+            "type": "command",
+            "line": "/kit workbench3"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-kit-abilities",
+      "name": "All ability items",
+      "category": "Cheat Menu: Items",
+      "permission": "cheatmenu.use",
+      "description": "Every ability item in the game.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/kit abilities"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-builders-stack",
+      "name": "Builder's stack",
+      "category": "Cheat Menu: Items",
+      "permission": "cheatmenu.use",
+      "description": "Building blocks and light: 100 Rock_Stone_Brick, 100 Rock_Stone_Cobble, 100 Wood_Softwood_Planks, 100 Wood_Hardwood_Planks, 25 Furniture_Crude_Window, 50 Furniture_Crude_Torch, 10 Deco_Lantern. Hytale has no plain glass block, so windows stand in for it. Make room first: whatever doesn't fit in your inventory isn't given.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/give Rock_Stone_Brick --quantity 100"
+          },
+          {
+            "type": "command",
+            "line": "/give Rock_Stone_Cobble --quantity 100"
+          },
+          {
+            "type": "command",
+            "line": "/give Wood_Softwood_Planks --quantity 100"
+          },
+          {
+            "type": "command",
+            "line": "/give Wood_Hardwood_Planks --quantity 100"
+          },
+          {
+            "type": "command",
+            "line": "/give Furniture_Crude_Window --quantity 25"
+          },
+          {
+            "type": "command",
+            "line": "/give Furniture_Crude_Torch --quantity 50"
+          },
+          {
+            "type": "command",
+            "line": "/give Deco_Lantern --quantity 10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-ore-and-bars",
+      "name": "Ore and bars",
+      "category": "Cheat Menu: Items",
+      "permission": "cheatmenu.use",
+      "description": "25 ore and 25 bars of each metal from copper up to adamantite: Copper, Iron, Thorium, Cobalt, Adamantite. Needs ten free slots. Make room first: whatever doesn't fit in your inventory isn't given.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/give Ore_Copper --quantity 25"
+          },
+          {
+            "type": "command",
+            "line": "/give Ingredient_Bar_Copper --quantity 25"
+          },
+          {
+            "type": "command",
+            "line": "/give Ore_Iron --quantity 25"
+          },
+          {
+            "type": "command",
+            "line": "/give Ingredient_Bar_Iron --quantity 25"
+          },
+          {
+            "type": "command",
+            "line": "/give Ore_Thorium --quantity 25"
+          },
+          {
+            "type": "command",
+            "line": "/give Ingredient_Bar_Thorium --quantity 25"
+          },
+          {
+            "type": "command",
+            "line": "/give Ore_Cobalt --quantity 25"
+          },
+          {
+            "type": "command",
+            "line": "/give Ingredient_Bar_Cobalt --quantity 25"
+          },
+          {
+            "type": "command",
+            "line": "/give Ore_Adamantite --quantity 25"
+          },
+          {
+            "type": "command",
+            "line": "/give Ingredient_Bar_Adamantite --quantity 25"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-provisions",
+      "name": "Provisions",
+      "category": "Cheat Menu: Items",
+      "permission": "cheatmenu.use",
+      "description": "Healing and food for a long trip: 10 Potion_Health, 10 Potion_Health_Greater, 5 Potion_Antidote, 25 Food_Pie_Meat, 25 Food_Bread. Make room first: whatever doesn't fit in your inventory isn't given.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/give Potion_Health --quantity 10"
+          },
+          {
+            "type": "command",
+            "line": "/give Potion_Health_Greater --quantity 10"
+          },
+          {
+            "type": "command",
+            "line": "/give Potion_Antidote --quantity 5"
+          },
+          {
+            "type": "command",
+            "line": "/give Food_Pie_Meat --quantity 25"
+          },
+          {
+            "type": "command",
+            "line": "/give Food_Bread --quantity 25"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-memories-all",
+      "name": "Unlock all memories",
+      "category": "Cheat Menu: Progress",
+      "permission": "cheatmenu.use",
+      "description": "Unlocks every memory.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/memories unlockall"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-signature-fill",
+      "name": "Fill signature energy",
+      "category": "Cheat Menu: Progress",
+      "permission": "cheatmenu.use",
+      "description": "Fills your signature energy, so your weapon's signature move is ready.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/fillsignature"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-stats-max",
+      "name": "Max out health and stamina",
+      "category": "Cheat Menu: Progress",
+      "permission": "cheatmenu.use",
+      "description": "Sets your health and stamina to their maximum.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/player stats settomax Health"
+          },
+          {
+            "type": "command",
+            "line": "/player stats settomax Stamina"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-backpack",
+      "name": "Bigger backpack",
+      "category": "Cheat Menu: Progress",
+      "permission": "cheatmenu.use",
+      "description": "Sets your backpack to 36 slots, as big as your main storage. If your backpack is already bigger, it shrinks to 36 and the items that don't fit drop on the ground.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/inventory backpack --size 36"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-spawn",
+      "name": "Back to spawn",
+      "category": "Cheat Menu: Movement",
+      "permission": "cheatmenu.use",
+      "description": "Teleports you to the world spawn.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/spawn"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-unstuck",
+      "name": "Unstuck",
+      "category": "Cheat Menu: Movement",
+      "permission": "cheatmenu.use",
+      "description": "Teleports you straight up to the top of the world where you stand.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/unstuck"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-home-set",
+      "name": "Set home here",
+      "category": "Cheat Menu: Movement",
+      "permission": "cheatmenu.use",
+      "description": "Saves where you stand as your home, a warp named home_<your name>. Warps are shared, so other players see it in /warp list and can go there too. A home set inside a temporary instance, like a temple, is lost when the instance closes.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/warp set home_{self} --force"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-home-go",
+      "name": "Go home",
+      "category": "Cheat Menu: Movement",
+      "permission": "cheatmenu.use",
+      "description": "Teleports you to the home you saved with Set home here.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/warp go home_{self}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-spectate-free",
+      "name": "Spectator flight",
+      "category": "Cheat Menu: Movement",
+      "permission": "cheatmenu.use",
+      "description": "Spectator mode, right where you are: fly freely, and nothing can hurt you. Stop spectating ends it where you are then, not where you started.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/spectate free"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-spectate-exit",
+      "name": "Stop spectating",
+      "category": "Cheat Menu: Movement",
+      "permission": "cheatmenu.use",
+      "description": "Ends spectator mode where you are. You don't go back to where you started, and if you're in the air you'll fall, so land first.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/spectate exit"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-dawn",
+      "name": "Morning",
+      "category": "Cheat Menu: Time and weather",
+      "permission": "cheatmenu.use",
+      "description": "World: sets the time to dawn.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/time dawn"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-noon-frozen",
+      "name": "Endless noon",
+      "category": "Cheat Menu: Time and weather",
+      "permission": "cheatmenu.use",
+      "description": "World: sets the time to noon and stops the clock. Start the clock again restarts it.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/noon"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-time-toggle",
+      "name": "Start the clock again",
+      "category": "Cheat Menu: Time and weather",
+      "permission": "cheatmenu.use",
+      "description": "World: starts the clock if it's stopped. It's a toggle: if the clock is running, this stops it.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/time pause"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-midnight",
+      "name": "Midnight",
+      "category": "Cheat Menu: Time and weather",
+      "permission": "cheatmenu.use",
+      "description": "World: sets the time to midnight.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/time midnight"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-weather-clear",
+      "name": "Clear skies",
+      "category": "Cheat Menu: Time and weather",
+      "permission": "cheatmenu.use",
+      "description": "World: forces sunny weather until you use Normal weather.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/weather set Zone1_Sunny"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-weather-reset",
+      "name": "Normal weather",
+      "category": "Cheat Menu: Time and weather",
+      "permission": "cheatmenu.use",
+      "description": "World: ends any forced weather, so the world's own weather comes back.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/weather reset"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-heal",
+      "name": "Heal",
+      "category": "Cheat Menu: Health and game mode",
+      "permission": "cheatmenu.use",
+      "description": "Fills your health and stamina.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/heal"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-creative",
+      "name": "Creative mode",
+      "category": "Cheat Menu: Health and game mode",
+      "permission": "cheatmenu.use",
+      "description": "Switches you to creative mode.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/gamemode creative"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-adventure",
+      "name": "Adventure mode",
+      "category": "Cheat Menu: Health and game mode",
+      "permission": "cheatmenu.use",
+      "description": "Switches you back to adventure mode.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/gamemode adventure"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-respawn",
+      "name": "Back to your bed",
+      "category": "Cheat Menu: Health and game mode",
+      "permission": "cheatmenu.use",
+      "description": "Teleports you to your respawn point: your bed if you've set one, otherwise the world spawn. Nothing is lost.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/tp home"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-lives-clear",
+      "name": "No lives limit",
+      "category": "Cheat Menu: Health and game mode",
+      "permission": "cheatmenu.use",
+      "description": "Removes your lives count, so you can't run out of lives.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/player lives clear"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-peaceful",
+      "name": "Peaceful",
+      "category": "Cheat Menu: World",
+      "permission": "cheatmenu.use",
+      "description": "World: stops new creatures from spawning. Creatures already in the world stay, and can still attack. Monsters back undoes it.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/world settings spawningnpc set false"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-monsters-back",
+      "name": "Monsters back",
+      "category": "Cheat Menu: World",
+      "permission": "cheatmenu.use",
+      "description": "World: creatures spawn as usual again.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/world settings spawningnpc reset"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-freeze-npcs",
+      "name": "Freeze all creatures",
+      "category": "Cheat Menu: World",
+      "permission": "cheatmenu.use",
+      "description": "World: every creature stops where it is. Unfreeze creatures undoes it.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/world settings freezeallnpcs set true"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheat-unfreeze-npcs",
+      "name": "Unfreeze creatures",
+      "category": "Cheat Menu: World",
+      "permission": "cheatmenu.use",
+      "description": "World: creatures move again.",
+      "macro": {
+        "type": "sequence",
+        "steps": [
+          {
+            "type": "command",
+            "line": "/cheatmenu check"
+          },
+          {
+            "type": "command",
+            "line": "/world settings freezeallnpcs reset"
+          }
+        ]
+      }
+    }
+  ]
+}
